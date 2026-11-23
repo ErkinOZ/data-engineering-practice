@@ -1,3 +1,14 @@
+# Exercise 02 — Calculate daily revenue using sorting and grouping.
+# Practice detecting date changes and accumulating each group's total.
+#
+# Run:
+# python3 02_daily_revenue_sort_and_group.py
+#
+# Expected output:
+# 2026-11-03 25
+# 2026-11-04 20
+
+
 orders = [
     {"date": "2026-11-03", "amount":10},
     {"date": "2026-11-04", "amount": 20},
@@ -24,7 +35,7 @@ for i in sorted_orders:
         current_date = date
         
     current_total += amount
-    
+
 if current_date is not None:
     print(current_date, current_total)
  
