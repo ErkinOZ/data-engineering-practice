@@ -49,3 +49,27 @@ print("Minimum:", min_by_date)
 # Task 3 — Average order amount by date.
 # Calculate the total and count for each date, then divide total by count.
 # Expected: {'2026-11-03': 12.5, '2026-11-04': 12.5, '2026-11-05': 8.0}
+
+totals_by_date = {}
+counts_by_date = {}
+
+for i in orders:
+    date = i["date"]
+    amount = i["amount"]
+    if date in totals_by_date:
+        totals_by_date[date] += amount
+        counts_by_date[date] += 1
+    else:
+        totals_by_date[date] = amount
+        counts_by_date[date] = 1
+
+average_by_date = {}
+
+for date in totals_by_date:
+     average_by_date[date] = totals_by_date[date] / counts_by_date[date]
+
+
+
+print(totals_by_date)
+print(counts_by_date)
+print("Average:", average_by_date)
